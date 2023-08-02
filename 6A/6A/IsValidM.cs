@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
@@ -32,7 +33,6 @@ namespace _6A
             char modalVariable = ' ';
 
 
-            var help = new List<char>();
 
             Dictionary<char, char> MyDictionary = new Dictionary<char, char>();
 
@@ -43,7 +43,8 @@ namespace _6A
             MyDictionary.Add(']', '[');
             MyDictionary.Add('>', '<');
 
-
+            var stack_1 = new Stack<char>();
+            int Length = stack.Count;
 
             if (stack.Count % 2 == 1)
             {
@@ -51,67 +52,45 @@ namespace _6A
             }
             else
             {
-                int i = 0;
-                while (i < stack.Count / 2)
+
+                int j = 0;
+                while (j < Length/2)
                 {
+                    int i = 1;
                     modalVariable = stack.Pop();
-                    if (MyDictionary.ContainsKey(modalVariable))
+                    foreach (var item in stack)
                     {
-                        foreach (var item in stack)
+                        if(item == MyDictionary[modalVariable])
                         {
-                            if (item == MyDictionary[modalVariable])
-                            {
-                                counter++;
-
-
-
-                                help = stack.ToArray().ToList();
-                                help.Remove(item);
-                            }
-                            else
-                            {
-                                help = stack.ToArray().ToList();
-                            }
-                            stack.Clear();
-                            for (int j = 0; j < help.Count; j++)
-                            {
-                                stack.Push(help[j]);
-                            }
-
 
                         }
+
                     }
-                    else
-                    {
-                        answer = false;
-                    }
+                    j++;
 
-                    i++;
-                }
-
-
-
-
-                if (counter != stack.Count / 2 || counter == 0)
-                {
-                    answer = false;
                 }
             }
 
 
 
 
-
+            if (counter != Length / 2 || counter == 0)
+            {
+                answer = false;
+            }
+            else
+            {
+                answer = true;
+            }
 
             return answer;
+            
         }
 
-        //public static Dictionary<char, char> MyDictionary = new Dictionary<char, char>();
 
-        //    MyDictionary.Add('(', ')');
-        //    MyDictionary.Add('{', '}');
-        //    MyDictionary.Add('[', ']');
-        //    MyDictionary.Add('<', '>');
+
+
+        
 
 
     }
