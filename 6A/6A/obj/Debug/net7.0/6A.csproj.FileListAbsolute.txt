@@ -1,0 +1,15 @@
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\bin\Debug\net7.0\6A.exe
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\bin\Debug\net7.0\6A.deps.json
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\bin\Debug\net7.0\6A.runtimeconfig.json
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\bin\Debug\net7.0\6A.dll
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\bin\Debug\net7.0\6A.pdb
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.AssemblyInfo.cs
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.dll
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\refint\6A.dll
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.pdb
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\6A.genruntimeconfig.cache
+C:\Users\HP\Desktop\Projects\Assignments\Assignment6\6A\6A\obj\Debug\net7.0\ref\6A.dll
