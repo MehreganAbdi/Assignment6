@@ -32,7 +32,7 @@ namespace _6A
             char modalVariable = ' ';
 
 
-
+            var help = new List<char>();
 
             Dictionary<char, char> MyDictionary = new Dictionary<char, char>();
 
@@ -51,7 +51,8 @@ namespace _6A
             }
             else
             {
-                for (int i = 0; i < stack.Count / 2; i++)
+                int i = 0;
+                while (i < stack.Count / 2)
                 {
                     modalVariable = stack.Pop();
                     if (MyDictionary.ContainsKey(modalVariable))
@@ -61,6 +62,20 @@ namespace _6A
                             if (item == MyDictionary[modalVariable])
                             {
                                 counter++;
+
+
+
+                                help = stack.ToArray().ToList();
+                                help.Remove(item);
+                            }
+                            else
+                            {
+                                help = stack.ToArray().ToList();
+                            }
+                            stack.Clear();
+                            for (int j = 0; j < help.Count; j++)
+                            {
+                                stack.Push(help[j]);
                             }
 
 
@@ -70,12 +85,14 @@ namespace _6A
                     {
                         answer = false;
                     }
+
+                    i++;
                 }
-                
-                
-                
-                
-                if (counter != stack.Count / 2 || counter==0)
+
+
+
+
+                if (counter != stack.Count / 2 || counter == 0)
                 {
                     answer = false;
                 }
