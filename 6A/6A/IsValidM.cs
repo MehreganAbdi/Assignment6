@@ -10,15 +10,30 @@ namespace _6A
 {
     public static class IsValidM
     {
-        public static bool IsValid(char[] array)
+        public static bool IsValid(string str)
         {
             bool answer = true;
+            char modalVariable = ' ';
+
+            str = str.Replace(" ", "");
+
+            char[] array = str.ToCharArray();
+            Stack<char> stack = new Stack<char>();
+
+
+            Dictionary<char, char> MyD = new Dictionary<char, char>();
+
+            MyD.Add(')', '(');
+            MyD.Add('}', '}');
+            MyD.Add(']', '[');
+            MyD.Add('>', '<');
+
+
+
 
             //Array.Reverse(array);
 
-            //considering that array can contain alphabetical chars.
 
-            Stack<char> stack = new Stack<char>();
             foreach (char c in array)
             {
                 if (c == '(' || c == ')' || c == '{' || c == '}'
@@ -27,71 +42,85 @@ namespace _6A
                     stack.Push(c);
                 }
             }
+            int length = stack.Count;
 
 
-            int counter = 0;
-            char modalVariable = ' ';
+            List<int> list = new List<int>();
+            list.Add(0);
+            list.Add(0);
+            list.Add(0);
+            list.Add(0);
 
-
-
-            Dictionary<char, char> MyDictionary = new Dictionary<char, char>();
-
-
-            //key , value
-            MyDictionary.Add(')', '(');
-            MyDictionary.Add('}', '{');
-            MyDictionary.Add(']', '[');
-            MyDictionary.Add('>', '<');
-
-            var stack_1 = new Stack<char>();
-            int Length = stack.Count;
-
-            if (stack.Count % 2 == 1)
-            {
-                answer = false;
-            }
-            else
+            if (length % 2 == 0)
             {
 
-                int j = 0;
-                while (j < Length/2)
+                for (int i = 0; i < length; i++)
                 {
-                    int i = 1;
                     modalVariable = stack.Pop();
-                    foreach (var item in stack)
+                    switch (modalVariable)
                     {
-                        if(item == MyDictionary[modalVariable])
-                        {
+                        case ')':
+                            list[0]++;
+                            break;
 
-                        }
+                        case '(':
+                            list[0]--;
+                            break;
+
+                        case '}':
+                            list[1]++;
+                            break;
+
+                        case '{':
+                            list[1]--;
+                            break;
+
+                        case ']':
+                            list[2]++;
+                            break;
+
+                        case '[':
+                            list[2]--;
+                            break;
+
+                        case '>':
+                            list[3]++;
+                            break;
+
+                        case '<':
+                            list[3]--;
+                            break;
 
                     }
-                    j++;
 
+                    foreach (var item in list)
+                    {
+                        if (item < 0)
+                        {
+                            answer = false;
+                        }
+                        else if (i == length - 1 && item > 0)
+                        {
+                            answer = false;
+                        }
+                    }
+
+                    if (!answer)
+                        break;
                 }
-            }
 
 
-
-
-            if (counter != Length / 2 || counter == 0)
-            {
-                answer = false;
             }
             else
             {
-                answer = true;
+                answer = false;
             }
 
             return answer;
-            
+
+
+
         }
-
-
-
-
-        
-
 
     }
 }
